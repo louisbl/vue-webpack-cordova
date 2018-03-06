@@ -62,6 +62,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     // see https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
       filename: config.build.index,
+      cordovaFile: 'cordova.js',
       template: 'index.html',
       inject: true,
       minify: {

@@ -25,7 +25,13 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     clientLogLevel: 'warning',
     historyApiFallback: {
       rewrites: [
-        { from: /.*/, to: path.posix.join(config.dev.assetsPublicPath, 'index.html') },
+        { from: '/cordova.js', to: './dist/platforms/android/assets/www/cordova.js' },
+        {
+          from: '/cordova_plugins.js',
+          to: './dist/platforms/android/assets/www/cordova_plugins.js',
+        },
+        { from: '/plugins', to: './dist/platforms/android/assets/www/plugins' },
+        { from: /.*/, to: path.posix.join(config.dev.assetsPublicPath, 'index.html') }
       ],
     },
     hot: true,
@@ -54,8 +60,15 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     // https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
       filename: 'index.html',
+      cordovaFile: 'cordova.js',
       template: 'index.html',
-      inject: true
+      inject: true,
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'index_dev.html',
+      cordovaFile: '',
+      template: 'index.html',
+      inject: true,
     }),
     // copy custom static assets
     new CopyWebpackPlugin([

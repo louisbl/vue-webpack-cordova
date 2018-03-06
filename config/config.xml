@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.example.vuecordova"
+        version="__PACKAGE_VERSION__"
+        xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+
+    <name>Vue Cordova</name>
+
+    <description>
+      Vue Cordova
+    </description>
+
+    <author email="contact@example.com" href="http://www.example.com/">
+      Example.com
+    </author>
+
+    <content src="__CONTENT_SRC__" />
+
+    <access origin="__CONTENT_ORIGIN__" />
+
+    <access origin="cdvfile://*" />
+    <!-- <access origin="https://sentry.io/*" /> -->
+    <access launch-external="yes" origin="mailto:*" />
+
+    <allow-intent href="mailto:*" />
+
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
+
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+
+    <preference name="SplashMaintainAspectRatio" value="true" />
+    <preference name="AutoHideSplashScreen" value="false" />
+    <preference name="Orientation" value="landscape" />
+
+</widget>

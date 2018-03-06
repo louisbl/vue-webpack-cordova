@@ -1,0 +1,16 @@
+{
+  "android": {
+    "debug": {
+      "keystore": "./certs/keystore.jks",
+      "storePassword": "password",
+      "alias": "vue_cordova_debug",
+      "password": "password"
+    },
+    "release": {
+      "keystore": "./certs/keystore.jks",
+      "storePassword": "password",
+      "alias": "vue_cordova",
+      "password": "password"
+    }
+  }
+}
